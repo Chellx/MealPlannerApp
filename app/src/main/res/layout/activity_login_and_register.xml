@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginAndRegister"
+    android:background="#FFFFFF">
+
+
+    <ImageView
+        android:layout_width="288dp"
+        android:layout_height="281dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="34dp"
+        android:layout_marginEnd="59dp"
+        android:src="@drawable/logo" />
+
+    <Button
+        android:id="@+id/btn_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/et_confirmPassword"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="56dp"
+        android:layout_marginBottom="188dp"
+        android:background="#FFE300"
+        android:ems="16"
+        android:text="LOGIN"
+        android:onClick="goToLoginScreen"
+        android:theme="@style/buttonStyle"
+        tools:layout_editor_absoluteX="56dp"
+        tools:layout_editor_absoluteY="281dp" />
+
+    <Button
+        android:id="@+id/btn_register"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/et_confirmPassword"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="58dp"
+        android:layout_marginBottom="102dp"
+        android:background="#FFE300"
+        android:ems="16"
+        android:onClick="goToRegisterScreen"
+        android:text="REGISTER NEW ACCOUNT"
+        android:theme="@style/buttonStyle"
+        tools:layout_editor_absoluteX="56dp"
+        tools:layout_editor_absoluteY="395dp" />
+
+</RelativeLayout>
