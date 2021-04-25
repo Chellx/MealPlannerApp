@@ -24,7 +24,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginTop="316dp"
         android:ems="16"
-        android:hint="USERNAME"
+        android:hint="@string/username"
         android:inputType="text"
         android:textColorHint="#000000"
         tools:layout_editor_absoluteX="100dp"
@@ -37,8 +37,8 @@
         android:layout_alignParentTop="true"
         android:layout_marginTop="399dp"
         android:ems="16"
-        android:hint="PASSWORD"
-        android:inputType="text"
+        android:hint="@string/password"
+        android:inputType="textPassword"
         android:textColorHint="#000000"
         tools:layout_editor_absoluteX="100dp"
         tools:layout_editor_absoluteY="240dp" />
@@ -47,13 +47,12 @@
         android:id="@+id/btn_login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/et_confirmPassword"
         android:layout_alignParentEnd="true"
         android:layout_marginTop="496dp"
         android:layout_marginEnd="61dp"
         android:background="#FFE300"
         android:ems="16"
-        android:text="LOGIN"
+        android:text="@string/login"
         android:theme="@style/buttonStyle" />
 
 
