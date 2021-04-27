@@ -14,11 +14,9 @@ public class LoginAndRegister extends AppCompatActivity {
         setContentView(R.layout.activity_login_and_register);
     }
 
-    /** Called when the user taps the Send button */
+    /** Called when the user taps button */
     public void goToRegisterScreen(View view) {
         // Do something in response to button
-
-
         Intent intent = new Intent (this, MainActivity.class);
         startActivity(intent);
     }

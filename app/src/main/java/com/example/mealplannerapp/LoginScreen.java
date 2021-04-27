@@ -2,6 +2,7 @@ package com.example.mealplannerapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -27,6 +28,8 @@ public class LoginScreen extends AppCompatActivity {
         SelectData();
     }
 
+
+
     public void SelectData (){
         loginButton.setOnClickListener(
                 new View.OnClickListener() {
@@ -35,12 +38,22 @@ public class LoginScreen extends AppCompatActivity {
                        String user = userName.getText().toString();
                        String password = userPassword.getText().toString();
                        Cursor cursor = myDb.getData(user,password);
-                        if(cursor.getCount() != 0 )
-                            Toast.makeText(LoginScreen.this,"Data Found", Toast.LENGTH_LONG).show();
+                        if(cursor.getCount() != 0 ) {
+                            goToHomePageScreen(view);
+                        }
                         else
                             Toast.makeText(LoginScreen.this,"Data not found", Toast.LENGTH_LONG).show();
                     }
                 }
         );
     }
+
+    public void goToHomePageScreen (View view) {
+        // Do something in response to button
+        Toast.makeText(LoginScreen.this, "Data Found", Toast.LENGTH_LONG).show();
+        Intent intent = new Intent (this, UserHomePage.class);
+        startActivity(intent);
+    }
+
+
 }
