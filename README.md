@@ -2,7 +2,7 @@
 For my 3rd year project I chose to create a mobile application specifically for the elderly to help them with meal planning.
 This app will help older people when planning meals. It will provide them with recipe recommendations for the week based on their needs.
 A slideshow containing more information can be found here: https://docs.google.com/presentation/d/13uKnPvqiafUhXbclY5VLb28ScenCjZ-C6o06qOKgTzg/edit?usp=sharing 
-!This project now uses SQLite instead of Firebase for the database!
+
 
 # Goals
 The main goals for this project are:
