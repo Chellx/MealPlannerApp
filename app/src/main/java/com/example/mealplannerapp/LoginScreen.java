@@ -3,57 +3,56 @@ package com.example.mealplannerapp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+
 public class LoginScreen extends AppCompatActivity {
-    DatabaseHelper myDb;
-    EditText userName,userPassword;
-    Button loginButton;
+    private EditText email;
+    private EditText password;
+    private Button login;
+
+    private FirebaseAuth auth;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_screen);
 
-        myDb = new DatabaseHelper(this);
-        userName= (EditText) findViewById(R.id.et_username);
-        userPassword= (EditText) findViewById(R.id.et_password);
-        loginButton = (Button) findViewById(R.id.btn_login);
-        SelectData();
+        email=findViewById(R.id.et_email);
+        password=findViewById(R.id.et_password);
+        login=findViewById(R.id.btn_login);
+
+        auth = FirebaseAuth.getInstance();
+
+        login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String userEmail=email.getText().toString();
+                String userPass=password.getText().toString();
+                loginUser(userEmail,userPass);
+
+            }
+        });
+
+
     }
 
+    private void loginUser(String email, String pass) {
+        auth.signInWithEmailAndPassword(email, pass).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
+            @Override
+            public void onSuccess(AuthResult authResult) {
+                Toast.makeText(LoginScreen.this,"LOGIN SUCCESSFUL",Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(LoginScreen.this,UserHomePage.class));
 
-
-    public void SelectData (){
-        loginButton.setOnClickListener(
-                new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                       String user = userName.getText().toString();
-                       String password = userPassword.getText().toString();
-                       Cursor cursor = myDb.getData(user,password);
-                        if(cursor.getCount() != 0 ) {
-                            goToHomePageScreen(view);
-                        }
-                        else
-                            Toast.makeText(LoginScreen.this,"Data not found", Toast.LENGTH_LONG).show();
-                    }
-                }
-        );
+            }
+        });
     }
-
-    public void goToHomePageScreen (View view) {
-        // Do something in response to button
-        Toast.makeText(LoginScreen.this, "Data Found", Toast.LENGTH_LONG).show();
-        Intent intent = new Intent (this, UserHomePage.class);
-        startActivity(intent);
-    }
-
-
 }

@@ -1,48 +1,72 @@
 package com.example.mealplannerapp;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
-    DatabaseHelper myDb;
-    EditText userName,userEmail,userPassword;
-    Button registerButton;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+
+
+public class MainActivity extends AppCompatActivity  {
+    private EditText email;
+    private EditText password;
+    private Button register;
+
+    private FirebaseAuth auth;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        myDb = new DatabaseHelper(this);
+        email=findViewById(R.id.et_email);
+        password=findViewById(R.id.et_password);
+        register=findViewById(R.id.btn_register);
 
-        userName= (EditText) findViewById(R.id.et_username);
-        userEmail= (EditText) findViewById(R.id.et_email);
-        userPassword= (EditText) findViewById(R.id.et_password);
-        registerButton = (Button) findViewById(R.id.btn_register);
-        AddData();
+        auth = FirebaseAuth.getInstance();
+
+        register.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String userEmail = email.getText().toString();
+                String userPass = password.getText().toString();
+
+                if(TextUtils.isEmpty(userEmail)||TextUtils.isEmpty(userPass)){
+                    Toast.makeText(MainActivity.this,"Empty",Toast.LENGTH_SHORT).show();
+                }
+                else{
+                    registerUser(userEmail,userPass);
+                }
+            }
+        });
+
 
     }
 
-    public void AddData (){
-        registerButton.setOnClickListener(
-                new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-
-                      boolean isInserted =  myDb.insertData(userName.getText().toString(),
-                                userEmail.getText().toString(),
-                                userPassword.getText().toString());
-                      if(isInserted = true)
-                          Toast.makeText(MainActivity.this,"User Data Inserted", Toast.LENGTH_LONG).show();
-                      else
-                          Toast.makeText(MainActivity.this,"User Data NOT Inserted", Toast.LENGTH_LONG).show();
-                    }
+    private void registerUser(String email, String password) {
+        auth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(MainActivity.this,new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                if(task.isSuccessful()){
+                    Toast.makeText(MainActivity.this,"SUCCESS",Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(MainActivity.this,UserHomePage.class));
                 }
-        );
+                else{
+                    Toast.makeText(MainActivity.this,"FAIL",Toast.LENGTH_SHORT).show();
+                }
+
+            }
+        });
     }
 }
