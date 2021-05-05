@@ -22,13 +22,13 @@ public class UserHomePage extends AppCompatActivity {
 
     public void goToMealPlanScreen(View view) {
         // Do something in response to button
-        Intent intent = new Intent (this, UserProfile.class);
+        Intent intent = new Intent (this, MealPlanPage.class);
         startActivity(intent);
     }
 
     public void goToShoppingScreen(View view) {
         // Do something in response to button
-        Intent intent = new Intent (this, UserProfile.class);
+        Intent intent = new Intent (this, ShoppingList.class);
         startActivity(intent);
     }
 

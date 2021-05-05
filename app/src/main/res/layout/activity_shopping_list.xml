@@ -1,0 +1,60 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ShoppingList"
+    android:background="#FFFFFF"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="SHOPPING LIST"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="20dp" />
+
+    <ListView
+        android:id="@+id/shoppingList"
+        android:layout_width="match_parent"
+        android:layout_height="646dp"
+        android:layout_weight="1">
+
+    </ListView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+
+        <EditText
+            android:id="@+id/shoppingItem"
+            android:layout_width="275dp"
+            android:layout_height="59dp"
+            android:layout_weight="1"
+            android:hint="TYPE ITEM HERE"
+            android:textColorHint="#000000" />
+
+        <Button
+            android:id="@+id/addItemButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#FFE300"
+            android:text="ADD ITEM"
+            android:theme="@style/buttonStyle" />
+
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/saveShoppingListButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFE300"
+        android:text="SAVE LIST"
+        android:theme="@style/buttonStyle" />
+
+
+</LinearLayout>
