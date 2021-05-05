@@ -30,7 +30,6 @@
         android:layout_marginBottom="369dp"
         android:background="#FFE300"
         android:ems="16"
-        android:onClick="createMealPlan"
         android:text="CREATE NEW MEAL PLAN"
         android:theme="@style/buttonStyle" />
 
@@ -47,7 +46,6 @@
         android:layout_marginBottom="279dp"
         android:background="#FFE300"
         android:ems="16"
-        android:onClick="goToCurrentMealPlan"
         android:text="VIEW CURRENT MEAL PLAN"
         android:theme="@style/buttonStyle" />
 
