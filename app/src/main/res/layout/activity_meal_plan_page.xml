@@ -66,7 +66,7 @@
         android:ems="16"
         android:onClick="gobackHome"
         android:text="Home"
-        android:theme="@style/buttonStyle" />
+        android:theme="@style/buttonStyle"  />
 
 
 </RelativeLayout>
