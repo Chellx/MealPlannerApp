@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -22,7 +23,10 @@ public class MainActivity extends AppCompatActivity  {
     private EditText password;
     private Button register;
 
+
     private FirebaseAuth auth;
+
+    boolean valid = true;
 
 
     @Override
@@ -36,6 +40,9 @@ public class MainActivity extends AppCompatActivity  {
 
         auth = FirebaseAuth.getInstance();
 
+
+        
+
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -43,7 +50,7 @@ public class MainActivity extends AppCompatActivity  {
                 String userPass = password.getText().toString();
 
                 if(TextUtils.isEmpty(userEmail)||TextUtils.isEmpty(userPass)){
-                    Toast.makeText(MainActivity.this,"Empty",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this,"EMPTY FIELDS",Toast.LENGTH_SHORT).show();
                 }
                 else{
                     registerUser(userEmail,userPass);
@@ -54,16 +61,20 @@ public class MainActivity extends AppCompatActivity  {
 
     }
 
+
+
     private void registerUser(String email, String password) {
         auth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(MainActivity.this,new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
-                    Toast.makeText(MainActivity.this,"SUCCESS",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this,"REGISTRATION SUCCESSFUL",Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(MainActivity.this,UserHomePage.class));
+
+                    //finish(); not allow user to go back
                 }
                 else{
-                    Toast.makeText(MainActivity.this,"FAIL",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this,"ERROR FAILED TO CREATE ACCOUNT",Toast.LENGTH_SHORT).show();
                 }
 
             }

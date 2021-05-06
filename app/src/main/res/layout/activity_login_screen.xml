@@ -43,15 +43,15 @@
         tools:layout_editor_absoluteX="100dp"
         tools:layout_editor_absoluteY="240dp" />
 
+
     <Button
         android:id="@+id/btn_login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/et_password"
         android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginTop="496dp"
-        android:layout_marginEnd="54dp"
-        android:layout_marginBottom="96dp"
+        android:layout_marginTop="112dp"
+        android:layout_marginEnd="53dp"
         android:background="#FFE300"
         android:ems="16"
         android:text="@string/login"

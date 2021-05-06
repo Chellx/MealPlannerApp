@@ -23,7 +23,7 @@
         android:layout_width="148dp"
         android:layout_height="45dp"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="340dp"
+        android:layout_marginTop="392dp"
         android:ems="26"
         android:hint="DOB"
         android:textColorHint="#000000"
@@ -35,16 +35,14 @@
         android:id="@+id/btn_adddob"
         android:layout_width="182dp"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/et_name"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="335dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginTop="27dp"
+        android:layout_marginEnd="4dp"
         android:background="#FFE300"
         android:ems="16"
         android:text="OPEN CALENDAR"
         android:theme="@style/buttonStyle" />
-
-
-
 
     <ImageView
         android:layout_width="218dp"
@@ -56,11 +54,23 @@
         android:src="@drawable/logo" />
 
     <EditText
+        android:id="@+id/et_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="271dp"
+        android:ems="16"
+        android:hint="E-MAIL"
+        android:textColorHint="#000000"
+        tools:layout_editor_absoluteX="100dp"
+        tools:layout_editor_absoluteY="240dp" />
+
+    <EditText
         android:id="@+id/et_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="278dp"
+        android:layout_marginTop="329dp"
         android:ems="16"
         android:hint="NAME"
         android:textColorHint="#000000"
@@ -73,8 +83,8 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/et_name"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="147dp"
-        android:layout_marginEnd="64dp"
+        android:layout_marginTop="142dp"
+        android:layout_marginEnd="59dp"
         android:background="#FFE300"
         android:ems="16"
         android:text="SAVE"

@@ -7,10 +7,12 @@
     android:background="#FFFFFF"
     android:orientation="vertical">
 
-    <TextView
+    <EditText
+        android:id="@+id/et_listName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="SHOPPING LIST"
+        android:hint="TYPE SHOPPING LIST NAME HERE"
+        android:textColorHint="#000000"
         android:textAlignment="center"
         android:textColor="#000000"
         android:textSize="20dp" />
@@ -43,10 +45,22 @@
             android:layout_height="wrap_content"
             android:background="#FFE300"
             android:text="ADD ITEM"
-            android:theme="@style/buttonStyle" />
+            android:theme="@style/buttonStyle"
+            android:layout_margin="10dp"/>
+
+        <Button
+            android:id="@+id/scanBarcodeButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#FFE300"
+            android:text="scan ITEM"
+            android:theme="@style/buttonStyle"
+            android:layout_margin="10dp"/>
 
 
     </LinearLayout>
+
+
 
     <Button
         android:id="@+id/saveShoppingListButton"
@@ -54,7 +68,8 @@
         android:layout_height="wrap_content"
         android:background="#FFE300"
         android:text="SAVE LIST"
-        android:theme="@style/buttonStyle" />
+        android:theme="@style/buttonStyle"
+        android:layout_margin="10dp"/>
 
 
 </LinearLayout>

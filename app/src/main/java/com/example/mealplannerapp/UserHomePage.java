@@ -28,7 +28,7 @@ public class UserHomePage extends AppCompatActivity {
 
     public void goToShoppingScreen(View view) {
         // Do something in response to button
-        Intent intent = new Intent (this, ShoppingList.class);
+        Intent intent = new Intent (this, ShoppingHomePage.class);
         startActivity(intent);
     }
 
