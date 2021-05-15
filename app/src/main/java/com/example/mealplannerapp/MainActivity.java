@@ -9,6 +9,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -28,6 +29,8 @@ public class MainActivity extends AppCompatActivity  {
 
     boolean valid = true;
 
+    private CheckBox nut,admin,user;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +42,10 @@ public class MainActivity extends AppCompatActivity  {
         register=findViewById(R.id.btn_register);
 
         auth = FirebaseAuth.getInstance();
+
+        nut=( CheckBox ) findViewById(R.id.check_nutrit);
+        admin=( CheckBox ) findViewById(R.id.check_admin);
+        user=( CheckBox ) findViewById(R.id.check_user);
 
 
         
@@ -58,8 +65,47 @@ public class MainActivity extends AppCompatActivity  {
             }
         });
 
+        nut.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                admin.setChecked(false);
+                user.setChecked(false);
 
-    }
+                if(isChecked){
+
+                }
+
+            }
+        });
+
+        admin.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                nut.setChecked(false);
+                user.setChecked(false);
+
+                if (isChecked) {
+
+                }
+            }
+        });
+
+        user.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                admin.setChecked(false);
+                nut.setChecked(false);
+
+                if (isChecked) {
+
+
+                }
+            }
+        });
+        }
+
+
+
 
 
 

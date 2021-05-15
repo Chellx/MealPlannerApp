@@ -63,7 +63,9 @@
         android:hint="E-MAIL"
         android:textColorHint="#000000"
         tools:layout_editor_absoluteX="100dp"
-        tools:layout_editor_absoluteY="240dp" />
+        tools:layout_editor_absoluteY="240dp"
+        android:focusable="false"
+        android:clickable="false"/>
 
     <EditText
         android:id="@+id/et_name"

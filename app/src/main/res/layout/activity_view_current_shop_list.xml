@@ -1,0 +1,42 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ViewCurrentShopList"
+    android:background="#FFFFFF"
+    android:orientation="vertical">
+
+    <EditText
+        android:id="@+id/et_currentListName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="SHOPPING LIST NAME "
+        android:textColorHint="#000000"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="20dp"
+        android:focusable="false"
+        android:clickable="false"/>
+
+
+    <ListView
+        android:id="@+id/currentShoppingList"
+        android:layout_width="match_parent"
+        android:layout_height="558dp"
+        android:layout_weight="1">
+
+    </ListView>
+
+    <Button
+        android:id="@+id/backButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFE300"
+        android:text="Back"
+        android:onClick="goBack"
+        android:theme="@style/buttonStyle"
+        android:layout_margin="10dp"/>
+
+
+</LinearLayout>

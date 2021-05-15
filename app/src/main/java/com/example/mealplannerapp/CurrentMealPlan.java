@@ -6,25 +6,17 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-public class MealPlanPage extends AppCompatActivity {
+public class CurrentMealPlan extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_meal_plan_page);
+        setContentView(R.layout.activity_current_meal_plan);
     }
-
 
     public void gobackHome (View view){
         // Do something in response to button
         Intent intent = new Intent (this, UserHomePage.class);
         startActivity(intent);
     }
-
-    public void goToCurrentMealPlan (View view){
-        // Do something in response to button
-        Intent intent = new Intent (this, CurrentMealPlan.class);
-        startActivity(intent);
-    }
-
 }

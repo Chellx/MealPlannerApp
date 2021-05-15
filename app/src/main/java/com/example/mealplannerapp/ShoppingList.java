@@ -1,5 +1,6 @@
 package com.example.mealplannerapp;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
@@ -13,7 +14,11 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.HashMap;
 
@@ -26,6 +31,10 @@ public class ShoppingList extends AppCompatActivity {
     private  String shoppingItem;
     private ArrayAdapter<String> shoppingListArrayAdapter; // use to populate list view
     private EditText listName;
+
+    DatabaseReference ref;
+    String email= "";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,10 +67,16 @@ public class ShoppingList extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //String userShoppingListToSave = userItem.getText().toString();
-                String userShoppingListToSave = userItem.getText().toString();
+
                 //shoppingListArrayAdapter.add(shoppingItem);
                 //String userShoppingListToSave = "";
+
+                String userShoppingListToSave = userItem.getText().toString();
                 String userListName = listName.getText().toString();
+
+                email = getIntent().getExtras().getString("email");
+                email=email.replace(".","");
+
 
               for(int i = 0;i <shoppingListArrayAdapter.getCount();i++){
                     userShoppingListToSave += shoppingListArrayAdapter.getItem(i) + ",";
@@ -69,19 +84,55 @@ public class ShoppingList extends AppCompatActivity {
 
                 }
                 if (shoppingItem.isEmpty()){
-                    Toast.makeText(ShoppingList.this, "Shopping List Is Empty", Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(ShoppingList.this, "Shopping List Is Empty", Toast.LENGTH_SHORT).show();
                 }
                 else{
                     HashMap<String,Object> userShopListMap = new HashMap<>();
                     userShopListMap.put("Shopping List Name", userListName);//key value
                     userShopListMap.put("Items",userShoppingListToSave);
                    // FirebaseDatabase.getInstance("https://mealplannerapp-a2bb5-default-rtdb.europe-west1.firebasedatabase.app/").getReference().child("Shopping List").child(userListName).push().setValue(userShoppingListToSave);
-                    FirebaseDatabase.getInstance("https://mealplannerapp-a2bb5-default-rtdb.europe-west1.firebasedatabase.app/").getReference().child("Shopping List").push().setValue(userShopListMap);
+                    FirebaseDatabase.getInstance("https://mealplannerapp-a2bb5-default-rtdb.europe-west1.firebasedatabase.app/").getReference().child("Shopping List").child(email).setValue(userShopListMap);
+                    getData();
 
                 }
             }
         });
 
+    }
+
+    public void getData(){
+        final String TAG = "";
+
+        ref = FirebaseDatabase.getInstance("https://mealplannerapp-a2bb5-default-rtdb.europe-west1.firebasedatabase.app/").getReference().child("Shopping List");
+        ref.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                boolean value = false;
+                String listName = "";
+                String items = "";
+
+                for(DataSnapshot itemList: snapshot.getChildren()){
+                    if(itemList.getKey().equals(email))
+                    {
+                        for(DataSnapshot item: itemList.getChildren()){
+                            if(value){
+                                listName = item.getValue().toString();
+                                System.out.println(listName);
+                            }
+                            else{
+                                items = item.getValue().toString();
+                                value=true;
+                            }
+                        }
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
     }
 
 

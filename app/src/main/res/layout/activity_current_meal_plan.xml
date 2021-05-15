@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:fillViewport="true"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".CurrentMealPlan"
+        android:background="#FFFFFF">
+
+
+        <Button
+            android:id="@+id/mon"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="6dp"
+            android:layout_marginEnd="272dp"
+            android:background="#FFE300"
+            android:ems="16"
+            android:text="MONDAY"
+            android:theme="@style/buttonStyle" />
+
+        <TextView
+            android:id="@+id/et_mondayMeals"
+            android:layout_width="400dp"
+            android:layout_height="122dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="62dp"
+            android:ems="26"
+            android:hint="Monday"
+            android:textColorHint="#000000"
+            android:textSize="19dp"
+            tools:layout_editor_absoluteX="100dp"
+            tools:layout_editor_absoluteY="240dp" />
+
+        <Button
+            android:id="@+id/tue"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="194dp"
+            android:layout_marginEnd="276dp"
+            android:background="#FFE300"
+            android:ems="16"
+            android:text="TUESDAY"
+            android:theme="@style/buttonStyle" />
+
+
+        <TextView
+            android:id="@+id/et_tuesdayMeals"
+            android:layout_width="400dp"
+            android:layout_height="122dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="250dp"
+            android:ems="26"
+            android:hint="Tuesday"
+            android:textColorHint="#000000"
+            android:textSize="19dp"
+            tools:layout_editor_absoluteX="100dp"
+            tools:layout_editor_absoluteY="240dp" />
+
+        <Button
+            android:id="@+id/wed"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="384dp"
+            android:layout_marginEnd="271dp"
+            android:background="#FFE300"
+            android:ems="16"
+            android:text="WEDNESDAY"
+            android:theme="@style/buttonStyle" />
+
+        <TextView
+            android:id="@+id/et_wednesdayMeals"
+            android:layout_width="400dp"
+            android:layout_height="122dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="449dp"
+            android:ems="26"
+            android:hint="Wednesday"
+            android:textColorHint="#000000"
+            android:textSize="19dp"
+            tools:layout_editor_absoluteX="100dp"
+            tools:layout_editor_absoluteY="240dp" />
+
+        <Button
+            android:id="@+id/thurs"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="585dp"
+            android:layout_marginEnd="273dp"
+            android:background="#FFE300"
+            android:ems="16"
+            android:text="THURSDAY"
+            android:theme="@style/buttonStyle" />
+
+        <TextView
+            android:id="@+id/et_thursdayMeals"
+            android:layout_width="400dp"
+            android:layout_height="122dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="645dp"
+            android:ems="26"
+            android:hint="Thursday"
+            android:textColorHint="#000000"
+            android:textSize="19dp"
+            tools:layout_editor_absoluteX="100dp"
+            tools:layout_editor_absoluteY="240dp" />
+
+        <Button
+            android:id="@+id/fri"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="780dp"
+            android:layout_marginEnd="272dp"
+            android:background="#FFE300"
+            android:ems="16"
+            android:text="FRIDAY"
+            android:theme="@style/buttonStyle" />
+
+        <TextView
+            android:id="@+id/et_fridayMeals"
+            android:layout_width="400dp"
+            android:layout_height="122dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="842dp"
+            android:ems="26"
+            android:hint="Friday"
+            android:textColorHint="#000000"
+            android:textSize="19dp"
+            tools:layout_editor_absoluteX="100dp"
+            tools:layout_editor_absoluteY="240dp" />
+
+        <Button
+            android:id="@+id/sat"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="974dp"
+            android:layout_marginEnd="271dp"
+            android:background="#FFE300"
+            android:ems="16"
+            android:text="SATURDAY"
+            android:theme="@style/buttonStyle" />
+
+        <TextView
+            android:id="@+id/et_saturdayMeals"
+            android:layout_width="400dp"
+            android:layout_height="122dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="1036dp"
+            android:ems="26"
+            android:hint="Saturday"
+            android:textColorHint="#000000"
+            android:textSize="19dp"
+            tools:layout_editor_absoluteX="100dp"
+            tools:layout_editor_absoluteY="240dp" />
+
+        <Button
+            android:id="@+id/sun"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="1170dp"
+            android:layout_marginEnd="273dp"
+            android:background="#FFE300"
+            android:ems="16"
+            android:text="SUNDAY"
+            android:theme="@style/buttonStyle" />
+
+        <TextView
+            android:id="@+id/et_sundayMeals"
+            android:layout_width="400dp"
+            android:layout_height="122dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="1247dp"
+            android:ems="26"
+            android:hint="Sunday"
+            android:textColorHint="#000000"
+            android:textSize="19dp"
+            tools:layout_editor_absoluteX="100dp"
+            tools:layout_editor_absoluteY="240dp" />
+
+        <Button
+            android:id="@+id/btn_goHome"
+            android:layout_width="wrap_content"
+            android:layout_height="68dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="1400dp"
+            android:layout_marginEnd="59dp"
+            android:background="#FFE300"
+            android:ems="16"
+            android:onClick="gobackHome"
+            android:text="HOME"
+            android:theme="@style/buttonStyle" />
+
+
+    </RelativeLayout>
+</ScrollView>

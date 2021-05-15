@@ -56,11 +56,17 @@ public class LoginScreen extends AppCompatActivity {
     }
 
     private void loginUser(String email, String pass) {
+        final String mail = email;
         auth.signInWithEmailAndPassword(email, pass).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
             @Override
             public void onSuccess(AuthResult authResult) {
                 Toast.makeText(LoginScreen.this,"LOGIN SUCCESSFUL",Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(LoginScreen.this,UserHomePage.class));
+
+                Bundle bundle = new Bundle();
+                bundle.putString("email", mail);
+                Intent intent = new Intent(LoginScreen.this,UserHomePage.class);
+                intent.putExtras(bundle);
+                startActivity(intent);
 
             }
         });

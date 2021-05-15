@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MealPlanPage"
+    tools:context=".ShoppingHomePage"
     android:background="#FFFFFF">
 
 
@@ -18,7 +18,7 @@
         android:src="@drawable/logo" />
 
     <Button
-        android:id="@+id/btn_createNewPlan"
+        android:id="@+id/btn_createNewShop"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -30,11 +30,12 @@
         android:layout_marginBottom="369dp"
         android:background="#FFE300"
         android:ems="16"
-        android:text="CREATE NEW MEAL PLAN"
+        android:onClick="goToCreateNewShop"
+        android:text="Create New Shopping List"
         android:theme="@style/buttonStyle" />
 
     <Button
-        android:id="@+id/btn_viewCurrentPlan"
+        android:id="@+id/btn_viewShopList"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -46,26 +47,26 @@
         android:layout_marginBottom="279dp"
         android:background="#FFE300"
         android:ems="16"
-        android:text="VIEW CURRENT MEAL PLAN"
-        android:onClick="goToCurrentMealPlan"
+        android:onClick="goToCurrentShopList"
+        android:text="View shopping list"
         android:theme="@style/buttonStyle" />
 
     <Button
-        android:id="@+id/btn_goBackHome"
-        android:layout_width="160dp"
+        android:id="@+id/btn_goHome"
+        android:layout_width="115dp"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="121dp"
+        android:layout_marginStart="143dp"
         android:layout_marginTop="36dp"
-        android:layout_marginEnd="130dp"
-        android:layout_marginBottom="122dp"
+        android:layout_marginEnd="154dp"
+        android:layout_marginBottom="190dp"
         android:background="#FFE300"
         android:ems="16"
         android:onClick="gobackHome"
         android:text="Home"
-        android:theme="@style/buttonStyle"  />
+        android:theme="@style/buttonStyle" />
 
 
 </RelativeLayout>
