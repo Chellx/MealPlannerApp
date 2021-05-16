@@ -31,6 +31,7 @@
         android:background="#FFE300"
         android:ems="16"
         android:text="CREATE NEW MEAL PLAN"
+        android:onClick="generateMealPlan"
         android:theme="@style/buttonStyle" />
 
     <Button

@@ -28,7 +28,7 @@ public class ShoppingList extends AppCompatActivity {
     private EditText userItem;
     private Button addItem;
     private Button saveList;
-    private  String shoppingItem;
+    private String shoppingItem;
     private ArrayAdapter<String> shoppingListArrayAdapter; // use to populate list view
     private EditText listName;
 
@@ -78,7 +78,7 @@ public class ShoppingList extends AppCompatActivity {
                 email=email.replace(".","");
 
 
-              for(int i = 0;i <shoppingListArrayAdapter.getCount();i++){
+                for(int i = 0;i <shoppingListArrayAdapter.getCount();i++){
                     userShoppingListToSave += shoppingListArrayAdapter.getItem(i) + ",";
                     //userShoppingListToSave += shoppingListArrayAdapter.getItem(i);
 
@@ -90,51 +90,10 @@ public class ShoppingList extends AppCompatActivity {
                     HashMap<String,Object> userShopListMap = new HashMap<>();
                     userShopListMap.put("Shopping List Name", userListName);//key value
                     userShopListMap.put("Items",userShoppingListToSave);
-                   // FirebaseDatabase.getInstance("https://mealplannerapp-a2bb5-default-rtdb.europe-west1.firebasedatabase.app/").getReference().child("Shopping List").child(userListName).push().setValue(userShoppingListToSave);
                     FirebaseDatabase.getInstance("https://mealplannerapp-a2bb5-default-rtdb.europe-west1.firebasedatabase.app/").getReference().child("Shopping List").child(email).setValue(userShopListMap);
-                    getData();
-
                 }
             }
         });
 
     }
-
-    public void getData(){
-        final String TAG = "";
-
-        ref = FirebaseDatabase.getInstance("https://mealplannerapp-a2bb5-default-rtdb.europe-west1.firebasedatabase.app/").getReference().child("Shopping List");
-        ref.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                boolean value = false;
-                String listName = "";
-                String items = "";
-
-                for(DataSnapshot itemList: snapshot.getChildren()){
-                    if(itemList.getKey().equals(email))
-                    {
-                        for(DataSnapshot item: itemList.getChildren()){
-                            if(value){
-                                listName = item.getValue().toString();
-                                System.out.println(listName);
-                            }
-                            else{
-                                items = item.getValue().toString();
-                                value=true;
-                            }
-                        }
-                    }
-                }
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
-    }
-
-
-
 }

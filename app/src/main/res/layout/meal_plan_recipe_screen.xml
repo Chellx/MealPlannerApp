@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MealPlanRecipeScreen"
+    android:background="#FFFFFF">
+
+
+    <Button
+        android:id="@+id/btn_recipeName"
+        android:layout_width="wrap_content"
+        android:layout_height="47dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="57dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="54dp"
+        android:layout_marginBottom="648dp"
+        android:background="#FFE300"
+        android:ems="16"
+        android:hint="Recipe Name"
+        android:theme="@style/buttonStyle" />
+
+    <Button
+        android:id="@+id/btn_recipeIngredients"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="55dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="56dp"
+        android:layout_marginBottom="579dp"
+        android:background="#FFE300"
+        android:ems="16"
+        android:hint="INGREDIENTS"
+        android:textColorHint="#000"
+        android:theme="@style/buttonStyle" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_above="@+id/btn_goHome"
+        android:layout_alignTop="@+id/btn_recipeMethod"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="59dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="-5dp" />
+
+    <Button
+        android:id="@+id/btn_recipeMethod"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="54dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="57dp"
+        android:layout_marginBottom="318dp"
+        android:background="#FFE300"
+        android:ems="16"
+        android:textColorHint="#000"
+        android:hint="METHOD"
+        android:theme="@style/buttonStyle" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="218dp"
+        android:layout_above="@+id/btn_recipeMethod"
+        android:layout_alignTop="@+id/btn_recipeIngredients"
+        android:layout_marginTop="57dp"
+        android:layout_marginBottom="-14dp" />
+
+    <Button
+        android:id="@+id/btn_goHome"
+        android:layout_width="115dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="146dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="151dp"
+        android:layout_marginBottom="13dp"
+        android:background="#FFE300"
+        android:ems="16"
+        android:onClick="gobackHome"
+        android:text="Home"
+        android:theme="@style/buttonStyle" />
+
+
+</RelativeLayout>

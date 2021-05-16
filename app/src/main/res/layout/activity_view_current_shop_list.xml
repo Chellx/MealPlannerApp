@@ -19,22 +19,24 @@
         android:focusable="false"
         android:clickable="false"/>
 
-
-    <ListView
-        android:id="@+id/currentShoppingList"
+    <EditText
+        android:id="@+id/et_hidden"
         android:layout_width="match_parent"
-        android:layout_height="558dp"
-        android:layout_weight="1">
+        android:layout_height="wrap_content"
+        android:textColorHint="#000000"
+        android:textAlignment="center"
+        android:textSize="20dp"
+        android:focusable="false"
+        android:clickable="false"/>
 
-    </ListView>
 
     <Button
         android:id="@+id/backButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#FFE300"
-        android:text="Back"
-        android:onClick="goBack"
+        android:text="home"
+        android:onClick="goBackShop"
         android:theme="@style/buttonStyle"
         android:layout_margin="10dp"/>
 

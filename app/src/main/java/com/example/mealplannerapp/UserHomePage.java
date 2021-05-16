@@ -33,8 +33,11 @@ public class UserHomePage extends AppCompatActivity {
     }
 
     public void goToMealPlanScreen(View view) {
+        Bundle bundle = new Bundle();
+        bundle.putString("email",userEmail);
         // Do something in response to button
         Intent intent = new Intent (this, MealPlanPage.class);
+        intent.putExtras(bundle);
         startActivity(intent);
     }
 
@@ -48,8 +51,11 @@ public class UserHomePage extends AppCompatActivity {
     }
 
     public void goToRecipeScreen(View view) {
+        Bundle bundle = new Bundle();
+        bundle.putString("email",userEmail);
         // Do something in response to button
         Intent intent = new Intent (this, UserProfile.class);
+        intent.putExtras(bundle);
         startActivity(intent);
     }
 }
