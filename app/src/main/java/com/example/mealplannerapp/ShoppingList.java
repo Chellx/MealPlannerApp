@@ -101,6 +101,7 @@ public class ShoppingList extends AppCompatActivity {
                     userShopListMap.put("Shopping List Name", userListName);//key value
                     userShopListMap.put("Items",userShoppingListToSave);
                     FirebaseDatabase.getInstance("https://mealplannerapp-a2bb5-default-rtdb.europe-west1.firebasedatabase.app/").getReference().child("Shopping List").child(email).setValue(userShopListMap);
+                    Toast.makeText(ShoppingList.this, "Shopping List Has Been Created", Toast.LENGTH_SHORT).show();
                 }
             }
         });
