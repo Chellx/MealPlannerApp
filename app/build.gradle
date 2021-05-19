@@ -5,6 +5,11 @@ android {
     compileSdkVersion 30
     buildToolsVersion "30.0.0"
 
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
     defaultConfig {
         applicationId "com.example.mealplannerapp"
         minSdkVersion 24
@@ -35,5 +40,11 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 
+    implementation 'com.journeyapps:zxing-android-embedded:4.2.0'
 
+
+}
+
+repositories {
+    mavenCentral()
 }

@@ -19,24 +19,50 @@
 
 
         <Button
-            android:id="@+id/mon"
-            android:layout_width="150dp"
+            android:id="@+id/monBreak"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
-            android:layout_marginTop="6dp"
-            android:layout_marginEnd="272dp"
+            android:layout_marginTop="45dp"
+            android:layout_marginEnd="0dp"
             android:background="#FFE300"
             android:ems="16"
-            android:text="MONDAY"
+            android:hint="MONDAY BREAKFAST"
+            android:theme="@style/buttonStyle" />
+
+        <Button
+            android:id="@+id/monLunch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="104dp"
+            android:layout_marginEnd="0dp"
+            android:background="#FFE300"
+            android:ems="16"
+            android:hint="MONDAY LUNCH"
+            android:theme="@style/buttonStyle" />
+
+        <Button
+            android:id="@+id/monDinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="165dp"
+            android:layout_marginEnd="-3dp"
+            android:background="#FFE300"
+            android:ems="16"
+            android:hint="MONDAY DINNER"
             android:theme="@style/buttonStyle" />
 
         <TextView
             android:id="@+id/et_mondayMeals"
-            android:layout_width="400dp"
-            android:layout_height="122dp"
+            android:layout_width="96dp"
+            android:layout_height="37dp"
             android:layout_alignParentTop="true"
-            android:layout_marginTop="62dp"
+            android:layout_marginTop="2dp"
             android:ems="26"
             android:hint="Monday"
             android:textColorHint="#000000"
@@ -44,26 +70,52 @@
             tools:layout_editor_absoluteX="100dp"
             tools:layout_editor_absoluteY="240dp" />
 
+
         <Button
-            android:id="@+id/tue"
-            android:layout_width="150dp"
+            android:id="@+id/tueBreak"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
-            android:layout_marginTop="194dp"
-            android:layout_marginEnd="276dp"
+            android:layout_marginTop="270dp"
+            android:layout_marginEnd="1dp"
             android:background="#FFE300"
             android:ems="16"
-            android:text="TUESDAY"
+            android:hint="TUESDAY BREAKFAST"
             android:theme="@style/buttonStyle" />
 
+        <Button
+            android:id="@+id/tueLunch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="332dp"
+            android:layout_marginEnd="-2dp"
+            android:background="#FFE300"
+            android:ems="16"
+            android:hint="TUESDAY LUNCH"
+            android:theme="@style/buttonStyle" />
+
+        <Button
+            android:id="@+id/tueDinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="390dp"
+            android:layout_marginEnd="0dp"
+            android:background="#FFE300"
+            android:ems="16"
+            android:hint="TUESDAY DINNER"
+            android:theme="@style/buttonStyle" />
 
         <TextView
             android:id="@+id/et_tuesdayMeals"
-            android:layout_width="400dp"
-            android:layout_height="122dp"
+            android:layout_width="90dp"
+            android:layout_height="37dp"
             android:layout_alignParentTop="true"
-            android:layout_marginTop="250dp"
+            android:layout_marginTop="224dp"
             android:ems="26"
             android:hint="Tuesday"
             android:textColorHint="#000000"
@@ -72,22 +124,48 @@
             tools:layout_editor_absoluteY="240dp" />
 
         <Button
-            android:id="@+id/wed"
-            android:layout_width="150dp"
+            android:id="@+id/wedBreak"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
-            android:layout_marginTop="384dp"
-            android:layout_marginEnd="271dp"
+            android:layout_marginTop="495dp"
+            android:layout_marginEnd="0dp"
             android:background="#FFE300"
             android:ems="16"
-            android:text="WEDNESDAY"
+            android:hint="WEDNESDAY BREAKFAST"
+            android:theme="@style/buttonStyle" />
+
+        <Button
+            android:id="@+id/wedLunch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="551dp"
+            android:layout_marginEnd="-1dp"
+            android:background="#FFE300"
+            android:ems="16"
+            android:hint="WEDNESDAY LUNCH"
+            android:theme="@style/buttonStyle" />
+
+        <Button
+            android:id="@+id/wedDinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="607dp"
+            android:layout_marginEnd="-3dp"
+            android:background="#FFE300"
+            android:ems="16"
+            android:hint="WEDNESDAY DINNER"
             android:theme="@style/buttonStyle" />
 
         <TextView
             android:id="@+id/et_wednesdayMeals"
-            android:layout_width="400dp"
-            android:layout_height="122dp"
+            android:layout_width="114dp"
+            android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_marginTop="449dp"
             android:ems="26"
@@ -98,24 +176,50 @@
             tools:layout_editor_absoluteY="240dp" />
 
         <Button
-            android:id="@+id/thurs"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
+            android:id="@+id/thursBreak"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
-            android:layout_marginTop="585dp"
-            android:layout_marginEnd="273dp"
+            android:layout_marginTop="718dp"
+            android:layout_marginEnd="0dp"
             android:background="#FFE300"
             android:ems="16"
-            android:text="THURSDAY"
+            android:hint="THURSDAY BREAKFAST"
+            android:theme="@style/buttonStyle" />
+
+        <Button
+            android:id="@+id/thursLunch"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="780dp"
+            android:layout_marginEnd="-2dp"
+            android:background="#FFE300"
+            android:ems="16"
+            android:hint="THURSDAY LUNCH"
+            android:theme="@style/buttonStyle" />
+
+        <Button
+            android:id="@+id/thursDinner"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="840dp"
+            android:layout_marginEnd="1dp"
+            android:background="#FFE300"
+            android:ems="16"
+            android:hint="THURSDAY DINNER"
             android:theme="@style/buttonStyle" />
 
         <TextView
             android:id="@+id/et_thursdayMeals"
-            android:layout_width="400dp"
-            android:layout_height="122dp"
+            android:layout_width="96dp"
+            android:layout_height="38dp"
             android:layout_alignParentTop="true"
-            android:layout_marginTop="645dp"
+            android:layout_marginTop="675dp"
             android:ems="26"
             android:hint="Thursday"
             android:textColorHint="#000000"
@@ -124,24 +228,50 @@
             tools:layout_editor_absoluteY="240dp" />
 
         <Button
-            android:id="@+id/fri"
-            android:layout_width="150dp"
+            android:id="@+id/friBreak"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
-            android:layout_marginTop="780dp"
-            android:layout_marginEnd="272dp"
+            android:layout_marginTop="942dp"
+            android:layout_marginEnd="0dp"
             android:background="#FFE300"
             android:ems="16"
-            android:text="FRIDAY"
+            android:hint="FRIDAY BREAKFAST"
+            android:theme="@style/buttonStyle" />
+
+        <Button
+            android:id="@+id/friLunch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="998dp"
+            android:layout_marginEnd="0dp"
+            android:background="#FFE300"
+            android:ems="16"
+            android:hint="FRIDAY LUNCH"
+            android:theme="@style/buttonStyle" />
+
+        <Button
+            android:id="@+id/friDinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="1056dp"
+            android:layout_marginEnd="-3dp"
+            android:background="#FFE300"
+            android:ems="16"
+            android:hint="FRIDAY DINNER"
             android:theme="@style/buttonStyle" />
 
         <TextView
             android:id="@+id/et_fridayMeals"
-            android:layout_width="400dp"
-            android:layout_height="122dp"
+            android:layout_width="67dp"
+            android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
-            android:layout_marginTop="842dp"
+            android:layout_marginTop="906dp"
             android:ems="26"
             android:hint="Friday"
             android:textColorHint="#000000"
@@ -150,24 +280,50 @@
             tools:layout_editor_absoluteY="240dp" />
 
         <Button
-            android:id="@+id/sat"
-            android:layout_width="150dp"
+            android:id="@+id/satBreak"
+            android:layout_width="440dp"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
-            android:layout_marginTop="974dp"
-            android:layout_marginEnd="271dp"
+            android:layout_marginTop="1155dp"
+            android:layout_marginEnd="0dp"
             android:background="#FFE300"
             android:ems="16"
-            android:text="SATURDAY"
+            android:hint="SATURDAY BREAKFAST"
+            android:theme="@style/buttonStyle" />
+
+        <Button
+            android:id="@+id/satLunch"
+            android:layout_width="443dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="1207dp"
+            android:layout_marginEnd="-2dp"
+            android:background="#FFE300"
+            android:ems="16"
+            android:hint="SATURDAY LUNCH"
+            android:theme="@style/buttonStyle" />
+
+        <Button
+            android:id="@+id/satDinner"
+            android:layout_width="440dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="1261dp"
+            android:layout_marginEnd="4dp"
+            android:background="#FFE300"
+            android:ems="16"
+            android:hint="SATURDAY DINNER"
             android:theme="@style/buttonStyle" />
 
         <TextView
             android:id="@+id/et_saturdayMeals"
-            android:layout_width="400dp"
-            android:layout_height="122dp"
+            android:layout_width="90dp"
+            android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
-            android:layout_marginTop="1036dp"
+            android:layout_marginTop="1118dp"
             android:ems="26"
             android:hint="Saturday"
             android:textColorHint="#000000"
@@ -176,24 +332,53 @@
             tools:layout_editor_absoluteY="240dp" />
 
         <Button
-            android:id="@+id/sun"
-            android:layout_width="150dp"
+            android:id="@+id/sunBreak"
+            android:layout_width="471dp"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
-            android:layout_marginTop="1170dp"
-            android:layout_marginEnd="273dp"
+            android:layout_marginTop="1366dp"
+            android:layout_marginEnd="0dp"
             android:background="#FFE300"
             android:ems="16"
-            android:text="SUNDAY"
+            android:hint="SUNDAY BREAKFAST"
+            android:theme="@style/buttonStyle" />
+
+        <Button
+            android:id="@+id/sunLunch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/sunBreak"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="1421dp"
+            android:layout_marginEnd="0dp"
+            android:background="#FFE300"
+            android:ems="16"
+            android:hint="SUNDAY LUNCH"
+            android:theme="@style/buttonStyle" />
+
+        <Button
+            android:id="@+id/sunDinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/sunLunch"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="1474dp"
+            android:layout_marginEnd="0dp"
+            android:background="#FFE300"
+            android:ems="16"
+
+            android:hint="SUNDAY DINNER"
             android:theme="@style/buttonStyle" />
 
         <TextView
             android:id="@+id/et_sundayMeals"
-            android:layout_width="400dp"
-            android:layout_height="122dp"
+            android:layout_width="83dp"
+            android:layout_height="37dp"
             android:layout_alignParentTop="true"
-            android:layout_marginTop="1247dp"
+            android:layout_marginTop="1315dp"
             android:ems="26"
             android:hint="Sunday"
             android:textColorHint="#000000"
@@ -201,14 +386,15 @@
             tools:layout_editor_absoluteX="100dp"
             tools:layout_editor_absoluteY="240dp" />
 
+
         <Button
             android:id="@+id/btn_goHome"
-            android:layout_width="wrap_content"
-            android:layout_height="68dp"
+            android:layout_width="135dp"
+            android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
-            android:layout_marginTop="1400dp"
-            android:layout_marginEnd="59dp"
+            android:layout_marginTop="1543dp"
+            android:layout_marginEnd="140dp"
             android:background="#FFE300"
             android:ems="16"
             android:onClick="gobackHome"

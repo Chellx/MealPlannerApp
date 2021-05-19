@@ -31,13 +31,10 @@ public class UserProfile extends AppCompatActivity implements DatePickerDialog.O
     private EditText userName,email;
     private TextView userDob;
     private Button addProfile,addDob;
-
-    FirebaseDatabase rootNode;
-    DatabaseReference reference;
+    private DatabaseReference ref;
 
     String mail="";
     String key="";
-    DatabaseReference ref;
     boolean value =false;
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -72,34 +69,40 @@ public class UserProfile extends AppCompatActivity implements DatePickerDialog.O
         });
 
 
-                addProfile.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        //rootNode = FirebaseDatabase.getInstance();
-                        //reference = rootNode.getReference("users");
-                        //reference.setValue("First Data");
-                        String user_name = userName.getText().toString();
-                        String user_dob = userDob.getText().toString();
+        addProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String user_name = userName.getText().toString();
+                String user_dob = userDob.getText().toString();
 
-                        if (user_name.isEmpty()) {
-                            //Toast.makeText(UserProfile.this, "Empty", Toast.LENGTH_SHORT).show();
-                        } else {
-
-                            // reference.setValue("test");
-
-                            HashMap<String,Object> userMap = new HashMap<>();
-                            userMap.put("Name", user_name);//key value
-                            userMap.put("DOB",user_dob);
-                            FirebaseDatabase.getInstance("https://mealplannerapp-a2bb5-default-rtdb.europe-west1.firebasedatabase.app/").getReference().child("User Profile").child(key).setValue(userMap);
-                           // FirebaseDatabase.getInstance("https://mealplannerapp-a2bb5-default-rtdb.europe-west1.firebasedatabase.app/").getReference().child("User Profile").push().child("DOB").setValue(user_dob);
-                            Toast.makeText(UserProfile.this, "DATA ENTERED", Toast.LENGTH_SHORT).show();
-                        }
-                    }
-                });
-
-
+                if (user_name.isEmpty()) {
+                    //Toast.makeText(UserProfile.this, "Empty", Toast.LENGTH_SHORT).show();
+                } else{
+                    addProfileToDatabase(user_name,user_dob);
+                }
+            }
+        });
     }
+    public void addProfileToDatabase(final String user_name,final String user_dob){
 
+        ref = FirebaseDatabase.getInstance("https://mealplannerapp-a2bb5-default-rtdb.europe-west1.firebasedatabase.app/").getReference().child("User Profile").child(key).child("Account Type");
+        ref.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                String v= snapshot.getValue().toString();
+                HashMap<String,Object> userMap = new HashMap<>();
+                userMap.put("Name", user_name);//key value
+                userMap.put("DOB",user_dob);
+                userMap.put("Account Type",v);
+                FirebaseDatabase.getInstance("https://mealplannerapp-a2bb5-default-rtdb.europe-west1.firebasedatabase.app/").getReference().child("User Profile").child(key).updateChildren(userMap);
+                Toast.makeText(UserProfile.this, "DATA ENTERED", Toast.LENGTH_SHORT).show();
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
     private void showDatePicker() {
         DatePickerDialog datePickerDialog = new DatePickerDialog(
                 this,
@@ -135,10 +138,12 @@ public class UserProfile extends AppCompatActivity implements DatePickerDialog.O
                                 userName.setText(name);
                             }
 
-                            else{
-                                date = item.getValue().toString();
-                                userDob.setText(date);
-                                value=true;
+                            else {
+                                if(item.getKey().equals("DOB")){
+                                    date = item.getValue().toString();
+                                    userDob.setText(date);
+                                    value=true;
+                                }
                             }
                         }
                     }

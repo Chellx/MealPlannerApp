@@ -17,19 +17,21 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.HashMap;
 
 
 public class MainActivity extends AppCompatActivity  {
     private EditText email;
     private EditText password;
     private Button register;
-
-
+    private String accountType = null;
     private FirebaseAuth auth;
-
     boolean valid = true;
-
-    private CheckBox nut,admin,user;
+    private CheckBox nutrit,admin,user;
+    private DatabaseReference ref;
 
 
     @Override
@@ -43,7 +45,7 @@ public class MainActivity extends AppCompatActivity  {
 
         auth = FirebaseAuth.getInstance();
 
-        nut=( CheckBox ) findViewById(R.id.check_nutrit);
+        nutrit =( CheckBox ) findViewById(R.id.check_nutrit);
         admin=( CheckBox ) findViewById(R.id.check_admin);
         user=( CheckBox ) findViewById(R.id.check_user);
 
@@ -60,18 +62,19 @@ public class MainActivity extends AppCompatActivity  {
                     Toast.makeText(MainActivity.this,"EMPTY FIELDS",Toast.LENGTH_SHORT).show();
                 }
                 else{
-                    registerUser(userEmail,userPass);
+                    registerUser(userEmail,userPass,accountType);
                 }
             }
         });
 
-        nut.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        nutrit.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 admin.setChecked(false);
                 user.setChecked(false);
 
                 if(isChecked){
+                    accountType="nutritionist";
 
                 }
 
@@ -81,10 +84,11 @@ public class MainActivity extends AppCompatActivity  {
         admin.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                nut.setChecked(false);
+                nutrit.setChecked(false);
                 user.setChecked(false);
 
                 if (isChecked) {
+                    accountType="admin";
 
                 }
             }
@@ -94,9 +98,10 @@ public class MainActivity extends AppCompatActivity  {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 admin.setChecked(false);
-                nut.setChecked(false);
+                nutrit.setChecked(false);
 
                 if (isChecked) {
+                    accountType="user";
 
 
                 }
@@ -109,21 +114,35 @@ public class MainActivity extends AppCompatActivity  {
 
 
 
-    private void registerUser(String email, String password) {
-        auth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(MainActivity.this,new OnCompleteListener<AuthResult>() {
-            @Override
-            public void onComplete(@NonNull Task<AuthResult> task) {
-                if(task.isSuccessful()){
-                    Toast.makeText(MainActivity.this,"REGISTRATION SUCCESSFUL",Toast.LENGTH_SHORT).show();
-                    startActivity(new Intent(MainActivity.this,UserHomePage.class));
-
+    private void registerUser(String email, String password, final String accountType) {
+        if(accountType!=null) {
+            auth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(MainActivity.this, new OnCompleteListener<AuthResult>() {
+                @Override
+                public void onComplete(@NonNull Task<AuthResult> task) {
+                    if (task.isSuccessful()) {
+                        setAccountType(accountType);
+                    }
                     //finish(); not allow user to go back
-                }
-                else{
-                    Toast.makeText(MainActivity.this,"ERROR FAILED TO CREATE ACCOUNT",Toast.LENGTH_SHORT).show();
-                }
+                    else {
+                        Toast.makeText(MainActivity.this, "ERROR FAILED TO CREATE ACCOUNT", Toast.LENGTH_SHORT).show();
+                    }
 
-            }
-        });
+                }
+            });
+        }
+        else{
+            Toast.makeText(MainActivity.this, "ACCOUNT TYPE REQUIRED", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    public void setAccountType(String accountT){
+        String mail = email.getText().toString();
+        mail=mail.replace(".","");
+        HashMap<String,Object> accountMap = new HashMap<>();
+        accountMap.put("Account Type",accountT);
+        FirebaseDatabase.getInstance("https://mealplannerapp-a2bb5-default-rtdb.europe-west1.firebasedatabase.app/").getReference().child("User Profile").child(mail).setValue(accountMap);
+        Toast.makeText(MainActivity.this,"REGISTRATION SUCCESSFUL",Toast.LENGTH_SHORT).show();
+        startActivity(new Intent(MainActivity.this,LoginAndRegister.class));
+
     }
 }

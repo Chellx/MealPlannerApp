@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -23,6 +24,7 @@ public class CurrentMealPlan extends AppCompatActivity {
     private String email = "";
     private String mealPlanMade = "";
     private Button mondayB,mondayL,mondayD,tuesdayB,tuesdayL,tuesdayD,wednesdayB,wednesdayL,wednesdayD,thursdayB,thursdayL,thursdayD,fridayB,fridayL,fridayD,saturdayB,saturdayL,saturdayD,sundayB,sundayL,sundayD;
+    String m = "";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,6 +52,7 @@ public class CurrentMealPlan extends AppCompatActivity {
         sundayB = findViewById(R.id.sunBreak);
         sundayL = findViewById(R.id.sunLunch);
         sundayD = findViewById(R.id.sunDinner);
+
         mealPlanMade = getIntent().getExtras().getString("bool");
         if(mealPlanMade.equals("1")){
             addToButtonsFromDatabase();
@@ -256,20 +259,26 @@ public class CurrentMealPlan extends AppCompatActivity {
         });
     }
     public void displayToScreen(HashMap<String,String> userShopListMap){
+        final String breakFast = "Breakfast";
+        final String lunch = "Lunch";
+        final String dinner = "Dinner";
         String value = userShopListMap.get("Monday BreakFast");
         mondayB.setText(value);
         mondayB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                final String meal = mondayB.getText().toString();
+                goToRecipe(this,meal,breakFast);
             }
         });
+
         value = userShopListMap.get("Tuesday BreakFast");
         tuesdayB.setText(value);
         tuesdayB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                final String meal = tuesdayB.getText().toString();
+                goToRecipe(this,meal,breakFast);
             }
         });
         value = userShopListMap.get("Wednesday BreakFast");
@@ -277,7 +286,8 @@ public class CurrentMealPlan extends AppCompatActivity {
         wednesdayB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                final String meal = wednesdayB.getText().toString();
+                goToRecipe(this,meal,breakFast);
             }
         });
         value = userShopListMap.get("Thursday BreakFast");
@@ -285,7 +295,8 @@ public class CurrentMealPlan extends AppCompatActivity {
         thursdayB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                final String meal = thursdayB.getText().toString();
+                goToRecipe(this,meal,breakFast);
             }
         });
         value = userShopListMap.get("Friday BreakFast");
@@ -293,7 +304,8 @@ public class CurrentMealPlan extends AppCompatActivity {
         fridayB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                final String meal = fridayB.getText().toString();
+                goToRecipe(this,meal,breakFast);
             }
         });
         value = userShopListMap.get("Saturday BreakFast");
@@ -301,15 +313,17 @@ public class CurrentMealPlan extends AppCompatActivity {
         saturdayB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                final String meal = saturdayB.getText().toString();
+                goToRecipe(this,meal,breakFast);
             }
         });
         value = userShopListMap.get("Sunday BreakFast");
         sundayB.setText(value);
-        saturdayB.setOnClickListener(new View.OnClickListener() {
+        sundayB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                final String meal = sundayB.getText().toString();
+                goToRecipe(this,meal,breakFast);
             }
         });
         value = userShopListMap.get("Monday Lunch");
@@ -317,7 +331,8 @@ public class CurrentMealPlan extends AppCompatActivity {
         mondayL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                final String meal = mondayL.getText().toString();
+                goToRecipe(this,meal,lunch);
             }
         });
         value = userShopListMap.get("Tuesday Lunch");
@@ -325,7 +340,8 @@ public class CurrentMealPlan extends AppCompatActivity {
         tuesdayL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                final String meal = tuesdayL.getText().toString();
+                goToRecipe(this,meal,lunch);
             }
         });
         value = userShopListMap.get("Wednesday Lunch");
@@ -333,7 +349,8 @@ public class CurrentMealPlan extends AppCompatActivity {
         wednesdayL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                final String meal = wednesdayL.getText().toString();
+                goToRecipe(this,meal,lunch);
             }
         });
         value = userShopListMap.get("Thursday Lunch");
@@ -341,7 +358,8 @@ public class CurrentMealPlan extends AppCompatActivity {
         thursdayL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                final String meal = thursdayL.getText().toString();
+                goToRecipe(this,meal,lunch);
             }
         });
         value = userShopListMap.get("Friday Lunch");
@@ -349,7 +367,8 @@ public class CurrentMealPlan extends AppCompatActivity {
         fridayL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                final String meal = fridayL.getText().toString();
+                goToRecipe(this,meal,lunch);
             }
         });
         value = userShopListMap.get("Saturday Lunch");
@@ -357,15 +376,17 @@ public class CurrentMealPlan extends AppCompatActivity {
         saturdayL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                final String meal = saturdayL.getText().toString();
+                goToRecipe(this,meal,lunch);
             }
         });
         value = userShopListMap.get("Sunday Lunch");
         sundayL.setText(value);
-        saturdayL.setOnClickListener(new View.OnClickListener() {
+        sundayL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                final String meal = sundayL.getText().toString();
+                goToRecipe(this,meal,lunch);
             }
         });
         value = userShopListMap.get("Monday Dinner");
@@ -373,7 +394,8 @@ public class CurrentMealPlan extends AppCompatActivity {
         mondayD.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                final String meal = mondayD.getText().toString();
+                goToRecipe(this,meal,dinner);
             }
         });
         value = userShopListMap.get("Tuesday Dinner");
@@ -381,7 +403,8 @@ public class CurrentMealPlan extends AppCompatActivity {
         tuesdayD.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                final String meal = tuesdayD.getText().toString();
+                goToRecipe(this,meal,dinner);
             }
         });
         value = userShopListMap.get("Wednesday Dinner");
@@ -389,7 +412,8 @@ public class CurrentMealPlan extends AppCompatActivity {
         wednesdayD.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                final String meal = wednesdayD.getText().toString();
+                goToRecipe(this,meal,dinner);
             }
         });
         value = userShopListMap.get("Thursday Dinner");
@@ -397,7 +421,8 @@ public class CurrentMealPlan extends AppCompatActivity {
         thursdayD.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                final String meal = thursdayD.getText().toString();
+                goToRecipe(this,meal,dinner);
             }
         });
         value = userShopListMap.get("Friday Dinner");
@@ -405,7 +430,8 @@ public class CurrentMealPlan extends AppCompatActivity {
         fridayD.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                final String meal = fridayD.getText().toString();
+                goToRecipe(this,meal,dinner);
             }
         });
         value = userShopListMap.get("Saturday Dinner");
@@ -413,16 +439,32 @@ public class CurrentMealPlan extends AppCompatActivity {
         saturdayD.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                final String meal = saturdayD.getText().toString();
+                goToRecipe(this,meal,dinner);
             }
         });
         value = userShopListMap.get("Sunday Dinner");
         sundayD.setText(value);
-        saturdayD.setOnClickListener(new View.OnClickListener() {
+        sundayD.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                final String meal = sundayD.getText().toString();
+                goToRecipe(this,meal,dinner);
             }
         });
+
     }
+    public void goToRecipe (View.OnClickListener view,final String mealName,final String typeMeal){
+        Bundle bundle = new Bundle();
+        bundle.putString("meal", mealName);
+        bundle.putString("mealType", typeMeal);
+        // Do something in response to button
+        Intent intent = new Intent (this, MealRecipeView.class);
+        intent.putExtras(bundle);
+        startActivity(intent);
+
+
+    }
+
+
 }
