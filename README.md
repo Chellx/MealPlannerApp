@@ -11,5 +11,5 @@ The main goals for this project are:
 * Reduce stress caused by planning food shopping.
 * Allow the elderly to retain their independance.
 * Comfortably use the app no matter their experience level.
-* Allow nutritionist to use the app also to register patient's detials and to recommend food and recipes to their patients.
+* Allow nutritionist to use the app also to register patient's detials and to connect with their patients.
 
