@@ -10,16 +10,18 @@
 
     <Button
         android:id="@+id/btn_recipeName"
-        android:layout_width="246dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_marginTop="7dp"
-        android:layout_marginEnd="80dp"
-        android:background="#FF913D"
+        android:layout_marginEnd="0dp"
+        android:background="#00AEFF"
+
         android:clickable="false"
         android:ems="16"
         android:hint="Recipe Name"
+        android:textSize="25dp"
         android:theme="@style/noClickButtonStyle" />
 
 
@@ -30,13 +32,15 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="-3dp"
+        android:layout_marginStart="108dp"
         android:layout_marginTop="36dp"
-        android:layout_marginEnd="220dp"
+        android:layout_marginEnd="109dp"
         android:layout_marginBottom="599dp"
-        android:background="#FF913D"
+        android:background="#fff"
+        android:clickable="false"
         android:ems="16"
         android:hint="INGREDIENTS"
+        android:textSize="25dp"
         android:textColorHint="#000"
         android:theme="@style/noClickButtonStyle" />
 
@@ -52,7 +56,8 @@
         android:layout_marginBottom="13dp"
         android:fadeScrollbars="false"
         android:scrollbars="vertical"
-        android:textSize="18dp" />
+        android:textSize="18dp"
+        android:textColor="#000"/>
 
     <Button
         android:id="@+id/btn_recipeMethod"
@@ -61,13 +66,15 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="-2dp"
+        android:layout_marginStart="108dp"
         android:layout_marginTop="36dp"
-        android:layout_marginEnd="226dp"
-        android:layout_marginBottom="319dp"
-        android:background="#FF913D"
+        android:layout_marginEnd="109dp"
+        android:layout_marginBottom="320dp"
+        android:background="#fff"
+        android:clickable="false"
         android:ems="16"
         android:hint="METHOD"
+        android:textSize="25dp"
         android:textColorHint="#000"
         android:theme="@style/buttonStyle" />
 
@@ -81,7 +88,8 @@
         android:layout_marginBottom="-18dp"
         android:fadeScrollbars="false"
         android:scrollbars="vertical"
-        android:textSize="18dp" />
+        android:textSize="18dp"
+        android:textColor="#000"/>
 
     <Button
         android:id="@+id/btn_goHome"

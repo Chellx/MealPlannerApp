@@ -15,7 +15,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".NutritHomePage"></activity>
+        <activity android:name=".NutritPatients"></activity>
+        <activity android:name=".NutritProfile" />
+        <activity android:name=".NutritHomePage" />
         <activity android:name=".MealRecipeView" />
         <activity
             android:name="com.journeyapps.barcodescanner.CaptureActivity"

@@ -44,6 +44,20 @@
         android:text="OPEN CALENDAR"
         android:theme="@style/buttonStyle" />
 
+
+    <TextView
+        android:id="@+id/et_nutritComment"
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="467dp"
+        android:ems="26"
+        android:hint=" NUTRITIONIST COMMENTS"
+        android:textColorHint="#000000"
+        android:textSize="19dp"
+        tools:layout_editor_absoluteX="100dp"
+        tools:layout_editor_absoluteY="240dp" />
+
     <ImageView
         android:layout_width="218dp"
         android:layout_height="253dp"
@@ -85,8 +99,8 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/et_name"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="142dp"
-        android:layout_marginEnd="59dp"
+        android:layout_marginTop="285dp"
+        android:layout_marginEnd="50dp"
         android:background="#FFE300"
         android:ems="16"
         android:text="SAVE"

@@ -57,19 +57,20 @@
             android:hint="MONDAY DINNER"
             android:theme="@style/buttonStyle" />
 
+
         <TextView
             android:id="@+id/et_mondayMeals"
-            android:layout_width="96dp"
-            android:layout_height="37dp"
+            android:layout_width="match_parent"
+            android:layout_height="41dp"
             android:layout_alignParentTop="true"
-            android:layout_marginTop="2dp"
+            android:layout_marginTop="0dp"
             android:ems="26"
             android:hint="Monday"
+            android:textAlignment="center"
             android:textColorHint="#000000"
-            android:textSize="19dp"
+            android:textSize="25dp"
             tools:layout_editor_absoluteX="100dp"
             tools:layout_editor_absoluteY="240dp" />
-
 
         <Button
             android:id="@+id/tueBreak"
@@ -112,14 +113,15 @@
 
         <TextView
             android:id="@+id/et_tuesdayMeals"
-            android:layout_width="90dp"
-            android:layout_height="37dp"
+            android:layout_width="match_parent"
+            android:layout_height="41dp"
             android:layout_alignParentTop="true"
             android:layout_marginTop="224dp"
             android:ems="26"
             android:hint="Tuesday"
+            android:textAlignment="center"
             android:textColorHint="#000000"
-            android:textSize="19dp"
+            android:textSize="25dp"
             tools:layout_editor_absoluteX="100dp"
             tools:layout_editor_absoluteY="240dp" />
 
@@ -164,14 +166,15 @@
 
         <TextView
             android:id="@+id/et_wednesdayMeals"
-            android:layout_width="114dp"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="37dp"
             android:layout_alignParentTop="true"
             android:layout_marginTop="449dp"
             android:ems="26"
             android:hint="Wednesday"
+            android:textAlignment="center"
             android:textColorHint="#000000"
-            android:textSize="19dp"
+            android:textSize="25dp"
             tools:layout_editor_absoluteX="100dp"
             tools:layout_editor_absoluteY="240dp" />
 
@@ -216,14 +219,15 @@
 
         <TextView
             android:id="@+id/et_thursdayMeals"
-            android:layout_width="96dp"
-            android:layout_height="38dp"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
             android:layout_alignParentTop="true"
-            android:layout_marginTop="675dp"
+            android:layout_marginTop="668dp"
             android:ems="26"
             android:hint="Thursday"
+            android:textAlignment="center"
             android:textColorHint="#000000"
-            android:textSize="19dp"
+            android:textSize="25dp"
             tools:layout_editor_absoluteX="100dp"
             tools:layout_editor_absoluteY="240dp" />
 
@@ -268,14 +272,15 @@
 
         <TextView
             android:id="@+id/et_fridayMeals"
-            android:layout_width="67dp"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
             android:layout_alignParentTop="true"
             android:layout_marginTop="906dp"
             android:ems="26"
             android:hint="Friday"
+            android:textAlignment="center"
             android:textColorHint="#000000"
-            android:textSize="19dp"
+            android:textSize="25dp"
             tools:layout_editor_absoluteX="100dp"
             tools:layout_editor_absoluteY="240dp" />
 
@@ -320,14 +325,15 @@
 
         <TextView
             android:id="@+id/et_saturdayMeals"
-            android:layout_width="90dp"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="41dp"
             android:layout_alignParentTop="true"
             android:layout_marginTop="1118dp"
             android:ems="26"
             android:hint="Saturday"
+            android:textAlignment="center"
             android:textColorHint="#000000"
-            android:textSize="19dp"
+            android:textSize="25dp"
             tools:layout_editor_absoluteX="100dp"
             tools:layout_editor_absoluteY="240dp" />
 
@@ -375,14 +381,15 @@
 
         <TextView
             android:id="@+id/et_sundayMeals"
-            android:layout_width="83dp"
-            android:layout_height="37dp"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
             android:layout_alignParentTop="true"
             android:layout_marginTop="1315dp"
             android:ems="26"
             android:hint="Sunday"
+            android:textAlignment="center"
             android:textColorHint="#000000"
-            android:textSize="19dp"
+            android:textSize="25dp"
             tools:layout_editor_absoluteX="100dp"
             tools:layout_editor_absoluteY="240dp" />
 
