@@ -16,7 +16,6 @@ public class NutritHomePage extends AppCompatActivity {
 
     public void goToNutritProfileScreen(View view) {
 
-
         Intent intent = new Intent(this, NutritProfile.class);
 
         startActivity(intent);
