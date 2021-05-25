@@ -77,8 +77,8 @@ public class UserProfile extends AppCompatActivity implements DatePickerDialog.O
                 String user_name = userName.getText().toString();
                 String user_dob = userDob.getText().toString();
 
-                if (user_name.isEmpty()) {
-                    //Toast.makeText(UserProfile.this, "Empty", Toast.LENGTH_SHORT).show();
+                if (user_name.isEmpty() || user_dob.isEmpty()) {
+                    Toast.makeText(UserProfile.this, "EMPTY FIELDS", Toast.LENGTH_SHORT).show();
                 } else{
                     addProfileToDatabase(user_name,user_dob);
                 }

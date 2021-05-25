@@ -49,7 +49,13 @@ public class NutritProfile extends AppCompatActivity {
                 String n=name.getText().toString();
                 String reg=regNumber.getText().toString();
                 String p=phone.getText().toString();
-                addDetails(n,reg,p);
+
+
+                if (n.isEmpty() || reg.isEmpty()||p.isEmpty()) {
+                    Toast.makeText(NutritProfile.this, "EMPTY FIELDS", Toast.LENGTH_SHORT).show();
+                } else{
+                    addDetails(n,reg,p);
+                }
             }
         });
     }

@@ -115,7 +115,7 @@ public class ShoppingList extends AppCompatActivity {
         if(intentResult != null){
             userItem.setText(intentResult.getContents());
             if(intentResult.getContents()== null){
-                userItem.setText("Error");
+                userItem.setText("ITEM DID NOT SCAN");
             }
             else{
                 String result = intentResult.getContents();

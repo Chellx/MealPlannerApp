@@ -5,25 +5,25 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MealRecipeView"
-    android:background="#FFFFFF">
+    android:background="@drawable/gradient_background">
 
 
     <Button
         android:id="@+id/btn_recipeName"
-        android:layout_width="match_parent"
+        android:layout_width="374dp"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_marginTop="7dp"
-        android:layout_marginEnd="0dp"
-        android:background="#00AEFF"
-
+        android:layout_marginEnd="18dp"
+        android:background="#3274d1"
         android:clickable="false"
         android:ems="16"
         android:hint="Recipe Name"
+        android:textColorHint="#fff"
+        android:textColor="#fff"
         android:textSize="25dp"
         android:theme="@style/noClickButtonStyle" />
-
 
     <Button
         android:id="@+id/btn_recipeIngredients"
@@ -36,11 +36,11 @@
         android:layout_marginTop="36dp"
         android:layout_marginEnd="111dp"
         android:layout_marginBottom="535dp"
-        android:background="#fff"
+        android:background="#3274d1"
         android:clickable="false"
         android:ems="16"
         android:hint="INGREDIENTS"
-        android:textColorHint="#000"
+        android:textColorHint="#fff"
         android:textSize="25dp"
         android:theme="@style/noClickButtonStyle" />
 
@@ -56,6 +56,8 @@
         android:layout_marginBottom="-24dp"
         android:fadeScrollbars="false"
         android:scrollbars="vertical"
+
+        android:background="@drawable/corner"
         android:textColor="#000"
         android:textSize="18dp" />
 
@@ -70,11 +72,11 @@
         android:layout_marginTop="36dp"
         android:layout_marginEnd="109dp"
         android:layout_marginBottom="281dp"
-        android:background="#fff"
+        android:background="#3274d1"
         android:clickable="false"
         android:ems="16"
         android:hint="METHOD"
-        android:textColorHint="#000"
+        android:textColorHint="#fff"
         android:textSize="25dp"
         android:theme="@style/buttonStyle" />
 
@@ -88,6 +90,8 @@
         android:layout_marginBottom="-18dp"
         android:fadeScrollbars="false"
         android:scrollbars="vertical"
+
+        android:background="@drawable/corner"
         android:textColor="#000"
         android:textSize="18dp" />
 
@@ -102,7 +106,7 @@
         android:layout_marginTop="36dp"
         android:layout_marginEnd="151dp"
         android:layout_marginBottom="6dp"
-        android:background="#FFE300"
+        android:background="#fff"
         android:ems="16"
         android:onClick="gobackHome"
         android:text="Home"

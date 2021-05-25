@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".NutritRecipe"
-    android:background="#FFE300">
+    android:background="@drawable/gradient_background">
 
 
     <TextView
@@ -23,13 +23,14 @@
 
     <Spinner
         android:id="@+id/recipeList"
-        android:layout_width="match_parent"
-        android:layout_height="54dp"
+        android:layout_width="392dp"
+        android:layout_height="51dp"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="-294dp"
-        android:layout_marginBottom="522dp"
+        android:layout_marginEnd="-286dp"
+        android:layout_marginBottom="525dp"
         android:layout_toStartOf="@+id/btn_viewRecipe"
-        android:background="#fff"
+        android:background="@drawable/spinner"
+        android:textColorHint="#fff"
         android:drawSelectorOnTop="true"
         android:spinnerMode="dropdown" />
 
@@ -41,7 +42,7 @@
         android:layout_alignParentEnd="true"
         android:layout_marginTop="88dp"
         android:layout_marginEnd="116dp"
-        android:background="#00aeff"
+        android:background="#3274d1"
         android:ems="16"
         android:text="VIEW"
         android:textColor="#fff"
@@ -49,12 +50,12 @@
 
     <TextView
         android:id="@+id/et_recipeMethod"
-        android:layout_width="match_parent"
-        android:layout_height="231dp"
+        android:layout_width="381dp"
+        android:layout_height="230dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_marginTop="421dp"
-        android:layout_marginEnd="0dp"
+        android:layout_marginEnd="14dp"
         android:background="#fff"
         android:ems="26"
         android:fadeScrollbars="false"
@@ -64,12 +65,12 @@
 
     <TextView
         android:id="@+id/et_ingredients"
-        android:layout_width="match_parent"
-        android:layout_height="185dp"
+        android:layout_width="384dp"
+        android:layout_height="176dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="221dp"
-        android:layout_marginEnd="0dp"
+        android:layout_marginTop="223dp"
+        android:layout_marginEnd="12dp"
         android:background="#fff"
         android:ems="26"
         android:fadeScrollbars="false"
