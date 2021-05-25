@@ -68,6 +68,39 @@
         android:text="SHOPPING LIST"
         android:theme="@style/buttonStyle" />
 
+    <Button
+        android:id="@+id/btn_recipelist"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="61dp"
+        android:layout_marginBottom="116dp"
+        android:background="#FFE300"
+        android:ems="16"
+        android:onClick="goToRecipeScreen"
+        android:text="RECIPES"
+        android:theme="@style/buttonStyle" />
+
+    <Button
+        android:id="@+id/btn_logout"
+        android:layout_width="141dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="131dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="139dp"
+        android:layout_marginBottom="40dp"
+        android:background="#FFE300"
+        android:ems="16"
+        android:onClick="logOut"
+        android:text="LOGOUT"
+        android:theme="@style/buttonStyle" />
 
 
 </RelativeLayout>

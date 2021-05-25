@@ -8,6 +8,8 @@ import android.os.Handler;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class SplashScreen extends AppCompatActivity {
+    // Reference : https://www.youtube.com/watch?v=jXtof6OUtcE
+
     private static int SPLASH_TIME = 3000; // time for splash on screen is 3 seconds
 
     @Override

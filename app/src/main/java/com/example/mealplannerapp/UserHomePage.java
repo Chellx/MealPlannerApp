@@ -54,8 +54,14 @@ public class UserHomePage extends AppCompatActivity {
         Bundle bundle = new Bundle();
         bundle.putString("email",userEmail);
         // Do something in response to button
-        Intent intent = new Intent (this, UserProfile.class);
+        Intent intent = new Intent (this, NutritRecipe.class);
         intent.putExtras(bundle);
+        startActivity(intent);
+    }
+
+    public void logOut(View view) {
+        // Do something in response to button
+        Intent intent = new Intent (this, LoginAndRegister.class);
         startActivity(intent);
     }
 

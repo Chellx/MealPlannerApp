@@ -39,7 +39,7 @@ public class GetFoodProduct extends AsyncTask<String, Void, String> {
             while((inputLine = reader.readLine()) != null){
                 stringBuilder.append(inputLine);
             }
-            //Close our InputStream and Buffered reader
+            //Close InputStream and Buffered reader
             reader.close();
             streamReader.close();
             //Set our result equal to our stringBuilder

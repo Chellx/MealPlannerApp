@@ -76,10 +76,6 @@ public class ShoppingList extends AppCompatActivity {
         saveList.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //String userShoppingListToSave = userItem.getText().toString();
-
-                //shoppingListArrayAdapter.add(shoppingItem);
-                //String userShoppingListToSave = "";
 
                 String userShoppingListToSave = userItem.getText().toString();
                 String userListName = listName.getText().toString();
@@ -90,7 +86,6 @@ public class ShoppingList extends AppCompatActivity {
 
                 for(int i = 0;i <shoppingListArrayAdapter.getCount();i++){
                     userShoppingListToSave += shoppingListArrayAdapter.getItem(i) + ",";
-                    //userShoppingListToSave += shoppingListArrayAdapter.getItem(i);
 
                 }
                 if (shoppingItem.isEmpty()){

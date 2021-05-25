@@ -46,13 +46,25 @@
 
 
     <TextView
-        android:id="@+id/et_nutritComment"
-        android:layout_width="match_parent"
-        android:layout_height="160dp"
+        android:id="@+id/et_nutritCommentHead"
+        android:layout_width="265dp"
+        android:layout_height="37dp"
         android:layout_alignParentTop="true"
         android:layout_marginTop="467dp"
         android:ems="26"
         android:hint=" NUTRITIONIST COMMENTS"
+        android:textColorHint="#000000"
+        android:textSize="19dp"
+        tools:layout_editor_absoluteX="100dp"
+        tools:layout_editor_absoluteY="240dp" />
+
+    <TextView
+        android:id="@+id/et_nutritComment"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="507dp"
+        android:ems="26"
         android:textColorHint="#000000"
         android:textSize="19dp"
         tools:layout_editor_absoluteX="100dp"

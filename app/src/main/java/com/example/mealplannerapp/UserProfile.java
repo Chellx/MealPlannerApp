@@ -32,6 +32,7 @@ public class UserProfile extends AppCompatActivity implements DatePickerDialog.O
     private TextView userDob;
     private Button addProfile,addDob;
     private DatabaseReference ref;
+    private TextView comment;
 
     String mail="";
     String key="";
@@ -54,6 +55,7 @@ public class UserProfile extends AppCompatActivity implements DatePickerDialog.O
         userName=findViewById(R.id.et_name);
         addProfile=findViewById(R.id.btn_addprofile);
         userDob = findViewById(R.id.et_DOB);
+        comment=findViewById(R.id.et_nutritComment);
 
         mail= getIntent().getExtras().getString("email");
         email.setText(mail);
@@ -133,17 +135,17 @@ public class UserProfile extends AppCompatActivity implements DatePickerDialog.O
                 for (DataSnapshot itemList: snapshot.getChildren()){
                     if(itemList.getKey().equals(key)){
                         for(DataSnapshot item: itemList.getChildren()){
-                            if(value){
-                                name=item.getValue().toString();
-                                userName.setText(name);
+                            if(item.getKey().equals("Name")){
+                                userName.setText(item.getValue().toString());
                             }
 
-                            else {
-                                if(item.getKey().equals("DOB")){
-                                    date = item.getValue().toString();
-                                    userDob.setText(date);
-                                    value=true;
-                                }
+                            else if(item.getKey().equals("DOB")) {
+                                userDob.setText(item.getValue().toString());
+
+                            }
+
+                            else if(item.getKey().equals("Nutritionist Message")){
+                                comment.setText(item.getValue().toString());
                             }
                         }
                     }
