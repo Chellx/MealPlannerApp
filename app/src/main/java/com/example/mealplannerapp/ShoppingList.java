@@ -76,7 +76,6 @@ public class ShoppingList extends AppCompatActivity {
         saveList.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 String userShoppingListToSave = userItem.getText().toString();
                 String userListName = listName.getText().toString();
 
@@ -88,8 +87,8 @@ public class ShoppingList extends AppCompatActivity {
                     userShoppingListToSave += shoppingListArrayAdapter.getItem(i) + ",";
 
                 }
-                if (shoppingItem.isEmpty()){
-                    //Toast.makeText(ShoppingList.this, "Shopping List Is Empty", Toast.LENGTH_SHORT).show();
+                if (shoppingItem == null){
+                    Toast.makeText(ShoppingList.this, "Shopping List Is Empty", Toast.LENGTH_SHORT).show();
                 }
                 else{
                     HashMap<String,Object> userShopListMap = new HashMap<>();

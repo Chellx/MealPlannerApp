@@ -20,7 +20,7 @@ public class UserHomePage extends AppCompatActivity {
             userEmail = getIntent().getExtras().getString("email");
             isTrue=false;
         }
-        Toast.makeText(this,userEmail,Toast.LENGTH_SHORT).show();
+       // Toast.makeText(this,userEmail,Toast.LENGTH_SHORT).show();
     }
 
     public void goToProfileScreen(View view) {
