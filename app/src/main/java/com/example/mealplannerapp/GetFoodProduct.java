@@ -8,50 +8,67 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
+//Reference - https://medium.com/@JasonCromer/android-asynctask-http-request-tutorial-6b429d833e28
+
 public class GetFoodProduct extends AsyncTask<String, Void, String> {
-    public static final String REQUEST_METHOD = "GET";
-    public static final int READ_TIMEOUT = 15000;
-    public static final int CONNECTION_TIMEOUT = 15000;
+    public static final String REQUEST_METHOD_TYPE = "GET";
+    public static final int READ_TIMEOUT_SECONDS = 15000; //15 SECONDS
+    public static final int CONNECTION_TIMEOUT_SECONDS = 15000; //15 SECONDS
     @Override
-    protected String doInBackground(String... params){
+    protected String doInBackground(String... params){ //used for background computation that can take a long time.
+
         String stringUrl = params[0];
         String result;
         String inputLine;
+
         try {
-            //Create a URL object holding our url
-            URL myUrl = new URL(stringUrl);
+            //Create a URL object to hold the URL
+
+            URL holdUrl = new URL(stringUrl);
+
             //Create a connection
             HttpURLConnection connection =(HttpURLConnection)
-                    myUrl.openConnection();
-            //Set methods and timeouts
-            connection.setRequestMethod(REQUEST_METHOD);
-            connection.setReadTimeout(READ_TIMEOUT);
-            connection.setConnectTimeout(CONNECTION_TIMEOUT);
+                    holdUrl.openConnection();
 
-            //Connect to our url
+            //Set the  methods and connection timeouts
+            connection.setRequestMethod(REQUEST_METHOD_TYPE);
+            connection.setReadTimeout(READ_TIMEOUT_SECONDS);
+            connection.setConnectTimeout(CONNECTION_TIMEOUT_SECONDS);
+
+            //make the connection to url
             connection.connect();
-            //Create a new InputStreamReader
+
+            //Create a new InputStreamReader used to read input from API
             InputStreamReader streamReader = new InputStreamReader(connection.getInputStream(),"UTF-8");
-            //Create a new buffered reader and String Builder
+
+            //Create a new buffered reader to read the text from an Input stream and String Builder to build up a mutable string of characters
+
             BufferedReader reader = new BufferedReader(streamReader);
             StringBuilder stringBuilder = new StringBuilder();
+
+
             //Check if the line we are reading is not null
+            //reading input, parsing and append to string builder
             while((inputLine = reader.readLine()) != null){
                 stringBuilder.append(inputLine);
             }
+
+
             //Close InputStream and Buffered reader
             reader.close();
             streamReader.close();
+
+
             //Set our result equal to our stringBuilder
             result = stringBuilder.toString();
         }
-        catch(IOException e){
+        catch(IOException e){ // only need ioexception for GET request in case something wrong in input or output
             e.printStackTrace();
             result = null;
         }
         return result;
     }
-    protected void onPostExecute(String result){
+    protected void onPostExecute(String result){ // can be used to display progress in the user interface
         super.onPostExecute(result);
     }
 }
