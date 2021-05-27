@@ -8,19 +8,13 @@ import android.view.View;
 import android.widget.Toast;
 
 public class UserHomePage extends AppCompatActivity {
-    private static String userEmail = "";
-    private static boolean isTrue = true;
+    String userEmail = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_home_page);
-
-        if(isTrue){
-            userEmail = getIntent().getExtras().getString("email");
-            isTrue=false;
-        }
-       // Toast.makeText(this,userEmail,Toast.LENGTH_SHORT).show();
+        userEmail = getIntent().getExtras().getString("email");
     }
 
     public void goToProfileScreen(View view) {
